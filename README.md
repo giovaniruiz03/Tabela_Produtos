@@ -4,12 +4,12 @@ Tarefa Banco de Dados - Tabela Produtos
 # Tópico 1
 Gere um relatório informando quantos produtos estão cadastrados.
 
-![total_prod](https://github.com/giovaniruiz03/Tabela_Produtos/assets/145368122/a21876b5-76f3-4f85-a867-0c503c012ab9)
+![image](https://github.com/giovaniruiz03/Tabela_Produtos/assets/145368122/dad46ce4-21f8-4518-bcb8-ca9603fda52c)
 
 # Tópico 2
 Gere um relatório informando o preço médio dos produtos.
 
-![image](https://github.com/giovaniruiz03/Tabela_Produtos/assets/145368122/cadf29a4-2b3f-49fe-ac5f-ec0cdb7848f4)
+![image](https://github.com/giovaniruiz03/Tabela_Produtos/assets/145368122/483564d1-0eb1-4bb6-9a1e-1d9e94576a7f)
 
 # Tópico 3 
 Selecione a média dos preços dos produtos em 2 grupos: perecíveis e não perecíveis.
