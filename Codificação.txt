@@ -1,0 +1,42 @@
+CREATE TABLE tb_produtos(
+  id             int PRIMARY KEY AUTO_INCREMENT,
+  nome           varchar(60) NOT NULL,
+  preco          decimal(6,2) NOT NULL,
+  estoque        int NOT NULL,
+  perecivel      varchar(3) NOT NULL,
+  marca          varchar(30),
+  nacionalidade  varchar(20)
+  );
+  
+  INSERT into tb_produtos (nome, preco, estoque, perecivel, marca, nacionalidade) VALUES ("Bolacha", 10.5, 100, "Sim", "Oreo", "Americana");
+  INSERT into tb_produtos (nome, preco, estoque, perecivel, marca, nacionalidade) VALUES ("Macarrão", 5.10, 150, "Sim", "Barella", "Italiana");
+  INSERT into tb_produtos (nome, preco, estoque, perecivel, marca, nacionalidade) VALUES ("Cereal", 20, 80, "Sim", "Nestlé", "Brasileira");
+  INSERT into tb_produtos (nome, preco, estoque, perecivel, marca, nacionalidade) VALUES ("Chinelo", 40, 30, "Não", "Havaianas", "Brasileira");
+  INSERT into tb_produtos (nome, preco, estoque, perecivel, marca, nacionalidade) VALUES ("Refrigerante", 10.5, 30, "Sim", "Guaraná", "Brasileira");
+
+/*Verificação de preenchimento da tabela*/
+SELECT * FROM tb_produtos;
+
+/*Gere um relatório informando quantos produtos estão cadastrados*/
+SELECT COUNT(*) FROM tb_produtos;
+
+/*Gere um relatório informando o preço médio dos produtos*/
+SELECT preco, AVG(preco) FROM tb_produtos;
+
+/*Selecione a média dos preços dos produtos em 2 grupos: perecíveis e não perecíveis*/
+SELECT *, AVG(preco) FROM tb_produtos group by perecivel;
+
+/*Selecione a média dos preços dos produtos agrupados pelo nome do produto*/
+SELECT *, AVG(preco) FROM tb_produtos group by nome;
+
+/*Selecione a média dos preços e total em estoque dos produtos*/
+select sum(estoque), avg(preco) from tb_produtos;
+
+/*Selecione o nome, marca e quantidade em estoque do produto mais caro*/
+select nome, max(preco), marca, estoque FROM tb_produtos;
+
+/*Selecione os produtos com preço acima da média*/
+select * from tb_produtos where preco > (select avg(preco) from tb_produtos);
+
+/*Selecione a quantidade de produtos de cada nacionalidade*/  
+select nacionalidade, sum(estoque) from tb_produtos group by nacionalidade;
